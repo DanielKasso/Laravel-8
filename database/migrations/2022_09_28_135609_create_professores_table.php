@@ -23,11 +23,17 @@ class CreateProfessoresTable extends Migration
             $table->string('email')->nullable();
             
             $table
+                   ->foreignId('users_id')
+                   ->index()
+                   ->constrained()
+                   ->cascadeOnDelete();
+
+            $table
                    ->foreignId('departamentos_id')
                    ->index()
                    ->constrained()
                    ->cascadeOnDelete();
-                   $table
+            $table
                    ->foreignId('ruas_id')
                    ->index()
                    ->constrained()

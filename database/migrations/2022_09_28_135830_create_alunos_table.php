@@ -61,6 +61,11 @@ class CreateAlunosTable extends Migration
                     ->index()
                     ->constrained()
                     ->cascadeOnDelete();
+            $table
+                   ->foreignId('users_id')
+                   ->index()
+                   ->constrained()
+                   ->cascadeOnDelete();
 
             $table->dateTimeTZ('criadoAo', 0)->nullable();
             $table->timestamps();
